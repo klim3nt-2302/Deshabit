@@ -1,0 +1,6 @@
+{
+  "name": "Deshabit",
+  "description": "Aplicación móvil y cuantificador de tiempo limpio, neuroplasticidad y arquitectura de fricción mínima para eliminar malos hábitos.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
