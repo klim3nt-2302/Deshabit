@@ -11,7 +11,7 @@
 ## Pendiente
 
 - Auth, pagos Pro, bloqueo de apps y escudo nocturno son UI local. No hay API.
-- `@google/genai` y `express` están en `package.json` y no tienen uso en `src/` ni `server.js`.
+- `express` y `dotenv` están en `package.json` sin uso.
 - `src/App.tsx` concentra el estado (~1100 líneas). Hábitos y desafíos son dos stores que pueden divergir.
 
 ## Blockers
