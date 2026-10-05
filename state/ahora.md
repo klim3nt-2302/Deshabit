@@ -13,7 +13,6 @@
 - Auth, pagos Pro, bloqueo de apps y escudo nocturno son UI local. No hay API.
 - `@google/genai` y `express` están en `package.json` y no tienen uso en `src/` ni `server.js`.
 - `src/App.tsx` concentra el estado (~1100 líneas). Hábitos y desafíos son dos stores que pueden divergir.
-- `README.md` sigue siendo la plantilla de AI Studio (pide `GEMINI_API_KEY`).
 
 ## Blockers
 

@@ -1,22 +1,51 @@
-Contexto del producto y del agente: [AGENTS.md](AGENTS.md). Estado vivo: [state/ahora.md](state/ahora.md). La app no llama a Gemini; la clave del bloque de abajo es de la plantilla de AI Studio.
+# Deshabit
 
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+Prototipo móvil para cuantificar tiempo limpio y dejar hábitos con fricción baja. La interfaz está en español. No hay backend: hábitos, desafíos, sesión y ajustes viven en `localStorage`.
 
-# Run and deploy your AI Studio app
+## Qué hace
 
-This contains everything you need to run your app locally.
+- Cuatro secciones: Inicio, Desafíos, Terapia y Perfil. El detalle de un hábito se abre fuera de la navegación inferior.
+- Registro de slips, rachas y ahorro estimado (dinero y tiempo).
+- Login, registro y recuperación de contraseña solo en el navegador. No envía correo ni llama a un servidor.
 
-View your app in AI Studio: https://ai.studio/apps/2ed2e538-cd96-45a3-9444-8b7c0584baa2
+## Requisitos
 
-## Run Locally
+- [Node.js](https://nodejs.org/) 20 o superior
 
-**Prerequisites:**  Node.js
+## Puesta en marcha
 
+```bash
+npm install
+npm run dev
+```
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+La app queda en [http://localhost:3000](http://localhost:3000). Ábrela con el ancho de un teléfono (~390px): el layout es un shell móvil, no un dashboard de escritorio.
+
+No hace falta archivo `.env` ni clave de API.
+
+## Scripts
+
+| Comando | Qué hace |
+| --- | --- |
+| `npm run dev` | Servidor de desarrollo en el puerto 3000 |
+| `npm run build` | Build de producción en `dist/` |
+| `npm run preview` | Sirve el build localmente |
+| `npm run lint` | Comprueba tipos (`tsc --noEmit`) |
+
+## Cuentas demo
+
+Hay tres cuentas de prueba en `src/data/accountsData.ts` (Alejandro, Camila y Matías). Las credenciales están solo en ese archivo.
+
+## Límites de este prototipo
+
+Auth, suscripción Pro, bloqueo de apps y escudo nocturno son interfaz local. No hay API detrás.
+
+## Estructura
+
+| Ruta | Qué es |
+| --- | --- |
+| `src/components/` | Vistas y modales |
+| `src/App.tsx` | Estado global |
+| `src/types.ts` | Tipos |
+| `src/data/` | Datos semilla, incluidas las cuentas demo |
+| `contexto/` | Reglas de producto y de diseño |
